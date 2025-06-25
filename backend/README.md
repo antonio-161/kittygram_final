@@ -1,51 +1,87 @@
-### Как запустить проект:
+# Kittygram Backend
 
-Клонировать репозиторий и перейти в него в командной строке:
+Kittygram — это сервис для любителей кошек, где пользователи могут добавлять карточки своих питомцев, делиться фотографиями и просматривать анкеты других котиков.
 
-```
+## Описание проекта
+
+Данный репозиторий содержит backend-часть приложения Kittygram, реализованную на Django и Django REST Framework. Сервис предоставляет API для работы с карточками котов, их цветами, достижениями и фотографиями.
+
+## Основные возможности
+
+- Регистрация и аутентификация пользователей
+- Добавление, редактирование и удаление карточек котов
+- Загрузка фотографий котов
+- Просмотр карточек других пользователей
+- Фильтрация и поиск по цвету и достижениям
+
+## Технологии
+
+- Python 3.8+
+- Django 3.x
+- Django REST Framework
+- PostgreSQL
+- Docker, Docker Compose
+- Gunicorn
+- Nginx
+
+## Быстрый старт
+
+### Клонирование репозитория
+
+```sh
 git clone https://github.com/yandex-praktikum/kittygram_backend.git
-```
-
-```
 cd kittygram_backend
 ```
 
-Cоздать и активировать виртуальное окружение:
+### Локальный запуск (без Docker)
 
-```
-python3 -m venv env
-```
+1. Создайте и активируйте виртуальное окружение:
+    - Linux/macOS:
+      ```sh
+      python3 -m venv env
+      source env/bin/activate
+      ```
+    - Windows:
+      ```sh
+      python -m venv env
+      source env/scripts/activate
+      ```
 
-* Если у вас Linux/macOS
-
+2. Установите зависимости:
+    ```sh
+    python3 -m pip install --upgrade pip
+    pip install -r requirements.txt
     ```
-    source env/bin/activate
+
+3. Выполните миграции:
+    ```sh
+    python3 manage.py migrate
     ```
 
-* Если у вас windows
-
+4. Запустите сервер разработки:
+    ```sh
+    python3 manage.py runserver
     ```
-    source env/scripts/activate
+
+### Запуск с помощью Docker
+
+1. Соберите и запустите контейнеры:
+    ```sh
+    docker-compose up --build
     ```
 
-```
-python3 -m pip install --upgrade pip
-```
+2. Приложение будет доступно по адресу: http://localhost:8000/
 
-Установить зависимости из файла requirements.txt:
+## Переменные окружения
 
-```
-pip install -r requirements.txt
-```
+Для настройки проекта используйте файл `.env` (пример — `.env.example`).
 
-Выполнить миграции:
+## Документация API
 
-```
-python3 manage.py migrate
-```
+После запуска проекта документация доступна по адресу:  
+`/api/docs/` (если настроено в проекте)
 
-Запустить проект:
+## Контакты
 
-```
-python3 manage.py runserver
-```
+- Автор: [Антон Степанов]
+- Email: [antonstepanov@yandex.ru]
